@@ -34,7 +34,7 @@ def change_password(request):
         print 'Contraseña no cambiada'
         data['form'] = PasswordChangeForm(request.user)
 
-    return render(request, 'registration/change_password.html', data)
+    return render(request, 'registration/password_change.html', data)
 
 
 
