@@ -1,0 +1,17 @@
+{% extends 'registration/base.html' %}
+{% load i18n %}
+{% load l10n %}
+{% load static %}
+{% block content %}
+
+    <div class="login">
+        <h2>{% trans 'Iniciar sesión' %}</h2>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button>{% trans "Acceder" %}</button>
+            <a href="">{% trans "Contraseña olvidada" %}</a>
+        </form>
+    </div>
+
+{% endblock %}
