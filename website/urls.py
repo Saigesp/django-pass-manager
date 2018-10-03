@@ -11,12 +11,17 @@ urlpatterns = [
     url(r'^opensesame/', admin.site.urls, name='opensesame'),
 
     # LOGIN
-    url(r'^$', views.custom_login, name='login'),
+    url(r'^login/$', views.custom_login, name='login'),
     url(r'^logout/$', auth_views.logout, {'next_page': '/'}, name='logout'),
+
+    # REGISTER
+    url(r'^signup/$', views.signup, name='signup'),
+    url(r'^signup_activation_sent/$', views.signup_activation_sent, name='signup_activation_sent'),
+    url(r'^signup_activate/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,20})/$',
+        views.signup_activate, name='signup_activate'),
 
     # PASSWORD CHANGE
     url(r'^password_change/$', views.change_password, name='change_password'),
-
 
     # PASSWORD RESET
     url(r'^password_reset/$', auth_views.password_reset, name='password_reset'),
@@ -26,6 +31,6 @@ urlpatterns = [
 
 
     # HOME
-    url(r'^home/', views.home, name='home'),
+    url(r'^$', views.home, name='home'),
 
 ]

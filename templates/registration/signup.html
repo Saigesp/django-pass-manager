@@ -5,13 +5,11 @@
 {% block content %}
 
     <div class="login">
-        <h2>{% trans 'Iniciar sesión' %}</h2>
+        <h2>{% trans 'Registro' %}</h2>
         <form method="post">
             {% csrf_token %}
             {{ form.as_p }}
-            <button>{% trans "Acceder" %}</button>
-            <a href="{% url 'password_reset' %}">{% trans "Contraseña olvidada" %}</a>
-            <a href="{% url 'signup' %}">{% trans "Registro" %}</a>
+            <button>{% trans "Registrarse" %}</button>
         </form>
     </div>
 
