@@ -34,6 +34,7 @@ def signup(request):
         if form.is_valid():
             user = form.save(commit=False)
             user.is_active = False
+            user.username = user.email
             user.save()
             current_site = get_current_site(request)
             subject = 'Activate Your MySite Account'

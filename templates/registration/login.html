@@ -8,7 +8,12 @@
         <h2>{% trans 'Iniciar sesión' %}</h2>
         <form method="post">
             {% csrf_token %}
-            {{ form.as_p }}
+            <p>
+                <label for="id_username">Email:</label> <input type="text" name="username" autofocus="" required="" id="id_username" maxlength="254">
+            </p>
+            <p>
+                <label for="id_password">Password:</label> <input type="password" name="password" required="" id="id_password">
+            </p>
             <button>{% trans "Acceder" %}</button>
             <a href="{% url 'password_reset' %}">{% trans "Contraseña olvidada" %}</a>
             <a href="{% url 'signup' %}">{% trans "Registro" %}</a>
