@@ -4,6 +4,7 @@ from django.contrib.auth import login, update_session_auth_hash, authenticate, v
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import PasswordChangeForm
 from django.contrib.auth.models import User
+from django.contrib import messages
 from django.contrib.sites.shortcuts import get_current_site
 from django.shortcuts import render, redirect
 from django.template.loader import render_to_string
@@ -22,6 +23,7 @@ def custom_login(request):
     if request.user.is_authenticated():
         return redirect('home')
 
+    messages.success(request, 'Olrait')
     return auth_views.login(request)
 
 
