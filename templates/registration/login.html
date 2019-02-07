@@ -9,10 +9,10 @@
         <form method="post">
             {% csrf_token %}
             <p>
-                <label for="id_username">Email:</label> <input type="text" name="username" autofocus="" required="" id="id_username" maxlength="254">
+                <label for="id_username">{% trans 'Email' %}</label> <input type="text" name="username" autofocus="" required="" id="id_username" maxlength="254">
             </p>
             <p>
-                <label for="id_password">Password:</label> <input type="password" name="password" required="" id="id_password">
+                <label for="id_password">{% trans 'Contraseña' %}</label> <input type="password" name="password" required="" id="id_password">
             </p>
             <button>{% trans "Acceder" %}</button>
             <a href="{% url 'password_reset' %}">{% trans "Contraseña olvidada" %}</a>
