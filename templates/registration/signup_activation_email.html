@@ -1,7 +1,13 @@
 {% autoescape off %}
-Hi {{ user.first_name }},
+Hola {{ user.first_name }}.
 
-Please click on the link below to confirm your registration:
+Para finalizar el proceso de registro en TestSite, haz click en el siguiente enlace:
 
 http://{{ domain }}{% url 'signup_activate' uidb64=uid token=token %}
+
+Si no has solicitado el alta en TestSite, por favor ignora este mensaje.
+
+
+Un saludo,
+El equipo de TestSite
 {% endautoescape %}
